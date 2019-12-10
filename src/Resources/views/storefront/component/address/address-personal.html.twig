@@ -1,0 +1,45 @@
+{% sw_extends '@Storefrot/storefront/component/address/address-personal.html.twig' %}
+
+{% block component_address_personal_fields_salutation_label %}
+    <label class="form-label"
+           for="{{ prefix }}personalSalutation">
+        {{ "account.personalSalutationLabel"|trans|sw_sanitize }}
+    </label>
+{% endblock %}
+
+{% block component_address_form_salutation_select %}
+<select id="{{ prefix }}personalSalutation"
+        class="custom-select{% if formViolations.getViolations('/salutationId') is not empty %} is-invalid{% endif %}"
+        name="{% if prefix %}{{ prefix }}[salutationId]{% else %}salutationId{% endif %}"
+        required="required">
+    {% for salutation in page.salutations %}
+        <option {% if salutation.id == data.get('salutationId')
+            or (not data.get('salutationId') and salutation.salutationKey == 'not_specified' )%}
+            selected="selected"
+        {% endif %}
+                value="{{ salutation.id }}">
+            {{ salutation.displayName }}
+        </option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+{% block component_address_personal_fields_salutation %}
+    {% if not shopware.config.ShePlatformSalutation.config.removeSalutation %}
+        {{ parent() }}
+    {% else %}
+        <select id="{{ prefix }}personalSalutation"
+                style="display: none"
+                name="{% if prefix %}{{ prefix }}[salutationId]{% else %}salutationId{% endif %}">
+            {% for salutation in page.salutations %}
+                <option {% if salutation.id == data.get('salutationId')
+                    or (not data.get('salutationId') and salutation.salutationKey == 'not_specified' )%}
+                    selected="selected"
+                {% endif %}
+                        value="{{ salutation.id }}">
+                    {{ salutation.displayName }}
+                </option>
+            {% endfor %}
+        </select>
+    {% endif %}
+{% endblock %}

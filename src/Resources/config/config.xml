@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Remove salutation or make it not required</title>
+        <title lang="de-DE">Anrede entfernen oder optional anbieten</title>
+        <input-field type="bool">
+            <name>removeSalutation</name>
+            <label>Remove salutation</label>
+            <label lang="de-DE">Anrede entfernen</label>
+        </input-field>
+    </card>
+</config>

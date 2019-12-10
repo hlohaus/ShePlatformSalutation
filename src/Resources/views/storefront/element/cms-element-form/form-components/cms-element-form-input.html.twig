@@ -1,0 +1,9 @@
+{% sw_extends '@Storefrot/storefront/element/cms-element-form/form-components/cms-element-form-input.html.twig' %}
+
+{% block cms_element_form_input %}
+    {% if shopware.config.ShePlatformSalutation.config.removeSalutation
+        and additionalClass == 'col-md-4' %}
+        {% set additionalClass = 'col-md-6' %}
+    {% endif %}
+    {{ parent() }}
+{% endblock %}

@@ -1,0 +1,33 @@
+{
+    "name": "she/platform-salutation",
+    "description": "Remove salutation or preselect \"not specified\"",
+    "version": "v1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "Proprietary",
+    "authors": [
+        {
+            "name": "S.HE Business GmbH"
+        }
+    ],
+    "require": {
+        "shopware/core": "*",
+        "shopware/administration": "*",
+        "shopware/storefront": "*"
+    },
+    "extra": {
+        "shopware-plugin-class": "She\\PlatformSalutation\\ShePlatformSalutation",
+        "label": {
+            "de-DE": "Anrede entfernen oder \"keine Angabe\" vorauswählen",
+            "en-GB": "Remove salutation or preselect \"not specified\""
+        },
+        "description": {
+            "de-DE": "Anrede entfernen oder optional anbieten",
+            "en-GB": "Remove salutation or preselect \"not specified\""
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "She\\PlatformSalutation\\": "src/"
+        }
+    }
+}
