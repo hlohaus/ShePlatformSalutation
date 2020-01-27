@@ -1,7 +1,7 @@
 {
     "name": "she/platform-salutation",
     "description": "Remove salutation or preselect \"not specified\"",
-    "version": "v1.0.0",
+    "version": "v1.0.01",
     "type": "shopware-platform-plugin",
     "license": "Proprietary",
     "authors": [

@@ -1,4 +1,4 @@
-{% sw_extends '@Storefrot/storefront/component/address/address-personal.html.twig' %}
+{% sw_extends '@Storefrot/storefront/element/cms-element-form/form-components/cms-element-form-select-salutation.html.twig' %}
 
 {% block cms_form_select_salutation_content_label %}
     {% set required = false %}
@@ -7,7 +7,7 @@
 
 {% block cms_form_select_salutation_content_select %}
     <select name="salutationId"
-            class="custom-select{% if formViolations.getViolations('/salutationId') is not empty %} is-invalid{% endif %}"
+            class="custom-select contact-select{% if formViolations.getViolations('/salutationId') is not empty %} is-invalid{% endif %}"
             id="form-Salutation">
         {% for salutation in element.data %}
             <option {% if salutation.id == data.get('salutationId')
